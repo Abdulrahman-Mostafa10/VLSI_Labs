@@ -1,2 +1,2 @@
 # VLSI_Labs
-This repository contains my work along for my academic VLSI course 🚀
+This repository contains my work with my academic VLSI course 🚀
