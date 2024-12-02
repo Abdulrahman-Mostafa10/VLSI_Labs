@@ -1,0 +1,929 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2024  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.46 (git sha1 e97731b9dda91fa5fa53ed87df7c34163ba59a41, clang++ 17.0.6 -fPIC -O3)
+Loaded SDC plugin
+
+1. Executing Liberty frontend: /home/amostafa/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+Imported 428 cell types from liberty file.
+[INFO] Using SDC file '/home/amostafa/CMP/VLSI/runs/RUN_2024-11-27_13-41-18/01-yosys-synthesis/synthesis.abc.sdc' for ABC…
+
+2. Executing Verilog-2005 frontend: ./ripple_adder.v
+Parsing SystemVerilog input from `./ripple_adder.v' to AST representation.
+Storing AST representation for module `$abstract\generic_ripple_carry_adder'.
+Storing AST representation for module `$abstract\full_adder'.
+Successfully finished Verilog frontend.
+
+3. Executing HIERARCHY pass (managing design hierarchy).
+
+4. Executing AST frontend in derive mode using pre-parsed AST for module `\generic_ripple_carry_adder'.
+Generating RTLIL representation for module `\generic_ripple_carry_adder'.
+
+4.1. Analyzing design hierarchy..
+Top module:  \generic_ripple_carry_adder
+
+4.2. Executing AST frontend in derive mode using pre-parsed AST for module `\full_adder'.
+Generating RTLIL representation for module `\full_adder'.
+
+4.3. Analyzing design hierarchy..
+Top module:  \generic_ripple_carry_adder
+Used module:     \full_adder
+
+4.4. Analyzing design hierarchy..
+Top module:  \generic_ripple_carry_adder
+Used module:     \full_adder
+Removing unused module `$abstract\full_adder'.
+Removing unused module `$abstract\generic_ripple_carry_adder'.
+Removed 2 unused modules.
+Renaming module generic_ripple_carry_adder to generic_ripple_carry_adder.
+
+5. Generating Graphviz representation of design.
+Writing dot description to `/home/amostafa/CMP/VLSI/runs/RUN_2024-11-27_13-41-18/01-yosys-synthesis/hierarchy.dot'.
+Dumping module generic_ripple_carry_adder to page 1.
+
+6. Executing TRIBUF pass.
+
+7. Executing HIERARCHY pass (managing design hierarchy).
+
+7.1. Analyzing design hierarchy..
+Top module:  \generic_ripple_carry_adder
+Used module:     \full_adder
+
+7.2. Analyzing design hierarchy..
+Top module:  \generic_ripple_carry_adder
+Used module:     \full_adder
+Removed 0 unused modules.
+
+8. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+9. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+10. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 0 assignments to connections.
+
+11. Executing PROC_INIT pass (extract init attributes).
+
+12. Executing PROC_ARST pass (detect async resets in processes).
+
+13. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+
+14. Executing PROC_MUX pass (convert decision trees to multiplexers).
+
+15. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+16. Executing PROC_DFF pass (convert process syncs to FFs).
+
+17. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+18. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+19. Executing CHECK pass (checking for obvious problems).
+Checking module generic_ripple_carry_adder...
+Checking module full_adder...
+Found and reported 0 problems.
+
+20. Executing OPT_EXPR pass (perform const folding).
+Optimizing module generic_ripple_carry_adder.
+Optimizing module full_adder.
+
+21. Executing FLATTEN pass (flatten design).
+Deleting now unused module full_adder.
+<suppressed ~8 debug messages>
+
+22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module generic_ripple_carry_adder.
+
+23. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \generic_ripple_carry_adder..
+Removed 0 unused cells and 16 unused wires.
+<suppressed ~1 debug messages>
+
+24. Executing OPT pass (performing simple optimizations).
+
+24.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module generic_ripple_carry_adder.
+
+24.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\generic_ripple_carry_adder'.
+Removed a total of 0 cells.
+
+24.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \generic_ripple_carry_adder..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+24.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \generic_ripple_carry_adder.
+Performed a total of 0 changes.
+
+24.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\generic_ripple_carry_adder'.
+Removed a total of 0 cells.
+
+24.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+24.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \generic_ripple_carry_adder..
+
+24.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module generic_ripple_carry_adder.
+
+24.9. Finished OPT passes. (There is nothing left to do.)
+
+25. Executing FSM pass (extract and optimize FSM).
+
+25.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+25.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+25.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+25.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \generic_ripple_carry_adder..
+
+25.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+25.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+25.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+25.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+26. Executing OPT pass (performing simple optimizations).
+
+26.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module generic_ripple_carry_adder.
+
+26.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\generic_ripple_carry_adder'.
+Removed a total of 0 cells.
+
+26.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \generic_ripple_carry_adder..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+26.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \generic_ripple_carry_adder.
+Performed a total of 0 changes.
+
+26.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\generic_ripple_carry_adder'.
+Removed a total of 0 cells.
+
+26.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+26.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \generic_ripple_carry_adder..
+
+26.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module generic_ripple_carry_adder.
+
+26.9. Finished OPT passes. (There is nothing left to do.)
+
+27. Executing WREDUCE pass (reducing word size of cells).
+
+28. Executing PEEPOPT pass (run peephole optimizers).
+
+29. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \generic_ripple_carry_adder..
+
+30. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module generic_ripple_carry_adder:
+  created 0 $alu and 0 $macc cells.
+
+31. Executing SHARE pass (SAT-based resource sharing).
+
+32. Executing OPT pass (performing simple optimizations).
+
+32.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module generic_ripple_carry_adder.
+
+32.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\generic_ripple_carry_adder'.
+Removed a total of 0 cells.
+
+32.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \generic_ripple_carry_adder..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+32.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \generic_ripple_carry_adder.
+Performed a total of 0 changes.
+
+32.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\generic_ripple_carry_adder'.
+Removed a total of 0 cells.
+
+32.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+32.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \generic_ripple_carry_adder..
+
+32.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module generic_ripple_carry_adder.
+
+32.9. Finished OPT passes. (There is nothing left to do.)
+
+33. Executing MEMORY pass.
+
+33.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+33.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+33.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+33.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+33.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+33.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \generic_ripple_carry_adder..
+
+33.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+33.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+33.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \generic_ripple_carry_adder..
+
+33.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+34. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \generic_ripple_carry_adder..
+
+35. Executing OPT pass (performing simple optimizations).
+
+35.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module generic_ripple_carry_adder.
+
+35.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\generic_ripple_carry_adder'.
+Removed a total of 0 cells.
+
+35.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+35.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \generic_ripple_carry_adder..
+
+35.5. Finished fast OPT passes.
+
+36. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+37. Executing OPT pass (performing simple optimizations).
+
+37.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module generic_ripple_carry_adder.
+
+37.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\generic_ripple_carry_adder'.
+Removed a total of 0 cells.
+
+37.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \generic_ripple_carry_adder..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+37.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \generic_ripple_carry_adder.
+Performed a total of 0 changes.
+
+37.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\generic_ripple_carry_adder'.
+Removed a total of 0 cells.
+
+37.6. Executing OPT_SHARE pass.
+
+37.7. Executing OPT_DFF pass (perform DFF optimizations).
+
+37.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \generic_ripple_carry_adder..
+
+37.9. Executing OPT_EXPR pass (perform const folding).
+Optimizing module generic_ripple_carry_adder.
+
+37.10. Finished OPT passes. (There is nothing left to do.)
+
+38. Executing TECHMAP pass (map to technology primitives).
+
+38.1. Executing Verilog-2005 frontend: /nix/store/c26m31cifv9fyym8p72j6cj5ilqgnh2z-yosys/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/nix/store/c26m31cifv9fyym8p72j6cj5ilqgnh2z-yosys/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+38.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $or.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $xor.
+No more expansions possible.
+<suppressed ~129 debug messages>
+
+39. Executing OPT pass (performing simple optimizations).
+
+39.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module generic_ripple_carry_adder.
+
+39.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\generic_ripple_carry_adder'.
+Removed a total of 0 cells.
+
+39.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+39.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \generic_ripple_carry_adder..
+
+39.5. Finished fast OPT passes.
+
+40. Executing OPT pass (performing simple optimizations).
+
+40.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module generic_ripple_carry_adder.
+
+40.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\generic_ripple_carry_adder'.
+Removed a total of 0 cells.
+
+40.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+40.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \generic_ripple_carry_adder..
+
+40.5. Finished fast OPT passes.
+
+41. Executing ABC pass (technology mapping using ABC).
+
+41.1. Extracting gate netlist of module `\generic_ripple_carry_adder' to `<abc-temp-dir>/input.blif'..
+Extracted 56 gates and 73 wires to a netlist network with 17 inputs and 9 outputs.
+
+41.1.1. Executing ABC.
+Running ABC command: "/nix/store/6l3aj1gi4lja8z5s4lan2k2cfz9mqkrz-yosys-abc/bin/abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+41.1.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:        3
+ABC RESULTS:              NAND cells:        7
+ABC RESULTS:            ANDNOT cells:       28
+ABC RESULTS:                OR cells:        2
+ABC RESULTS:              XNOR cells:        7
+ABC RESULTS:               XOR cells:        9
+ABC RESULTS:        internal signals:       47
+ABC RESULTS:           input signals:       17
+ABC RESULTS:          output signals:        9
+Removing temp directory.
+
+42. Executing OPT pass (performing simple optimizations).
+
+42.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module generic_ripple_carry_adder.
+
+42.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\generic_ripple_carry_adder'.
+Removed a total of 0 cells.
+
+42.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+42.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \generic_ripple_carry_adder..
+Removed 0 unused cells and 66 unused wires.
+<suppressed ~1 debug messages>
+
+42.5. Finished fast OPT passes.
+
+43. Executing HIERARCHY pass (managing design hierarchy).
+
+43.1. Analyzing design hierarchy..
+Top module:  \generic_ripple_carry_adder
+
+43.2. Analyzing design hierarchy..
+Top module:  \generic_ripple_carry_adder
+Removed 0 unused modules.
+
+44. Executing CHECK pass (checking for obvious problems).
+Checking module generic_ripple_carry_adder...
+Found and reported 0 problems.
+
+45. Printing statistics.
+
+=== generic_ripple_carry_adder ===
+
+   Number of wires:                 93
+   Number of wire bits:            122
+   Number of public wires:          46
+   Number of public wire bits:      75
+   Number of ports:                  5
+   Number of port bits:             26
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 64
+     $_ANDNOT_                      28
+     $_AND_                          3
+     $_NAND_                         7
+     $_OR_                           2
+     $_XNOR_                         7
+     $_XOR_                          9
+     $scopeinfo                      8
+
+46. Generating Graphviz representation of design.
+Writing dot description to `/home/amostafa/CMP/VLSI/runs/RUN_2024-11-27_13-41-18/01-yosys-synthesis/primitive_techmap.dot'.
+Dumping module generic_ripple_carry_adder to page 1.
+
+47. Executing OPT pass (performing simple optimizations).
+
+47.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module generic_ripple_carry_adder.
+
+47.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\generic_ripple_carry_adder'.
+Removed a total of 0 cells.
+
+47.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \generic_ripple_carry_adder..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+47.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \generic_ripple_carry_adder.
+Performed a total of 0 changes.
+
+47.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\generic_ripple_carry_adder'.
+Removed a total of 0 cells.
+
+47.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+47.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \generic_ripple_carry_adder..
+
+47.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module generic_ripple_carry_adder.
+
+47.9. Finished OPT passes. (There is nothing left to do.)
+
+48. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \generic_ripple_carry_adder..
+Removed 8 unused cells and 33 unused wires.
+<suppressed ~41 debug messages>
+{
+   "creator": "Yosys 0.46 (git sha1 e97731b9dda91fa5fa53ed87df7c34163ba59a41, clang++ 17.0.6 -fPIC -O3)",
+   "invocation": "stat -json -liberty /home/amostafa/CMP/VLSI/runs/RUN_2024-11-27_13-41-18/tmp/f72bb3db3a154bb7aa91ac6b2e275306.lib ",
+   "modules": {
+      "\\generic_ripple_carry_adder": {
+         "num_wires":         60,
+         "num_wire_bits":     81,
+         "num_pub_wires":     13,
+         "num_pub_wire_bits": 34,
+         "num_ports":         5,
+         "num_port_bits":     26,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         56,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 28,
+            "$_AND_": 3,
+            "$_NAND_": 7,
+            "$_OR_": 2,
+            "$_XNOR_": 7,
+            "$_XOR_": 9
+         }
+      }
+   },
+      "design": {
+         "num_wires":         60,
+         "num_wire_bits":     81,
+         "num_pub_wires":     13,
+         "num_pub_wire_bits": 34,
+         "num_ports":         5,
+         "num_port_bits":     26,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         56,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 28,
+            "$_AND_": 3,
+            "$_NAND_": 7,
+            "$_OR_": 2,
+            "$_XNOR_": 7,
+            "$_XOR_": 9
+         }
+      }
+}
+
+49. Printing statistics.
+
+=== generic_ripple_carry_adder ===
+
+   Number of wires:                 60
+   Number of wire bits:             81
+   Number of public wires:          13
+   Number of public wire bits:      34
+   Number of ports:                  5
+   Number of port bits:             26
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 56
+     $_ANDNOT_                      28
+     $_AND_                          3
+     $_NAND_                         7
+     $_OR_                           2
+     $_XNOR_                         7
+     $_XOR_                          9
+
+   Area for cell type $_AND_ is unknown!
+   Area for cell type $_NAND_ is unknown!
+   Area for cell type $_OR_ is unknown!
+   Area for cell type $_XOR_ is unknown!
+   Area for cell type $_XNOR_ is unknown!
+   Area for cell type $_ANDNOT_ is unknown!
+
+[INFO] Applying tri-state buffer mapping from '/home/amostafa/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tribuff_map.v'…
+
+50. Executing TECHMAP pass (map to technology primitives).
+
+50.1. Executing Verilog-2005 frontend: /home/amostafa/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tribuff_map.v
+Parsing Verilog input from `/home/amostafa/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tribuff_map.v' to AST representation.
+Generating RTLIL representation for module `\$_TBUF_'.
+Successfully finished Verilog frontend.
+
+50.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~3 debug messages>
+
+51. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+[INFO] Applying latch mapping from '/home/amostafa/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/openlane/sky130_fd_sc_hd/latch_map.v'…
+
+52. Executing TECHMAP pass (map to technology primitives).
+
+52.1. Executing Verilog-2005 frontend: /home/amostafa/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/openlane/sky130_fd_sc_hd/latch_map.v
+Parsing Verilog input from `/home/amostafa/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.tech/openlane/sky130_fd_sc_hd/latch_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DLATCH_P_'.
+Generating RTLIL representation for module `\$_DLATCH_N_'.
+Successfully finished Verilog frontend.
+
+52.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+53. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+54. Executing DFFLIBMAP pass (mapping DFF cells to sequential cells from liberty file).
+  cell sky130_fd_sc_hd__dfxtp_2 (noninv, pins=3, area=21.27) is a direct match for cell type $_DFF_P_.
+  cell sky130_fd_sc_hd__dfrtp_2 (noninv, pins=4, area=26.28) is a direct match for cell type $_DFF_PN0_.
+  cell sky130_fd_sc_hd__dfstp_2 (noninv, pins=4, area=26.28) is a direct match for cell type $_DFF_PN1_.
+  cell sky130_fd_sc_hd__dfbbn_2 (noninv, pins=6, area=35.03) is a direct match for cell type $_DFFSR_NNN_.
+  final dff cell mappings:
+    unmapped dff cell: $_DFF_N_
+    \sky130_fd_sc_hd__dfxtp_2 _DFF_P_ (.CLK( C), .D( D), .Q( Q));
+    unmapped dff cell: $_DFF_NN0_
+    unmapped dff cell: $_DFF_NN1_
+    unmapped dff cell: $_DFF_NP0_
+    unmapped dff cell: $_DFF_NP1_
+    \sky130_fd_sc_hd__dfrtp_2 _DFF_PN0_ (.CLK( C), .D( D), .Q( Q), .RESET_B( R));
+    \sky130_fd_sc_hd__dfstp_2 _DFF_PN1_ (.CLK( C), .D( D), .Q( Q), .SET_B( R));
+    unmapped dff cell: $_DFF_PP0_
+    unmapped dff cell: $_DFF_PP1_
+    \sky130_fd_sc_hd__dfbbn_2 _DFFSR_NNN_ (.CLK_N( C), .D( D), .Q( Q), .Q_N(~Q), .RESET_B( R), .SET_B( S));
+    unmapped dff cell: $_DFFSR_NNP_
+    unmapped dff cell: $_DFFSR_NPN_
+    unmapped dff cell: $_DFFSR_NPP_
+    unmapped dff cell: $_DFFSR_PNN_
+    unmapped dff cell: $_DFFSR_PNP_
+    unmapped dff cell: $_DFFSR_PPN_
+    unmapped dff cell: $_DFFSR_PPP_
+
+54.1. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+Mapping DFF cells in module `\generic_ripple_carry_adder':
+{
+   "creator": "Yosys 0.46 (git sha1 e97731b9dda91fa5fa53ed87df7c34163ba59a41, clang++ 17.0.6 -fPIC -O3)",
+   "invocation": "stat -json -liberty /home/amostafa/CMP/VLSI/runs/RUN_2024-11-27_13-41-18/tmp/f72bb3db3a154bb7aa91ac6b2e275306.lib ",
+   "modules": {
+      "\\generic_ripple_carry_adder": {
+         "num_wires":         60,
+         "num_wire_bits":     81,
+         "num_pub_wires":     13,
+         "num_pub_wire_bits": 34,
+         "num_ports":         5,
+         "num_port_bits":     26,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         56,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 28,
+            "$_AND_": 3,
+            "$_NAND_": 7,
+            "$_OR_": 2,
+            "$_XNOR_": 7,
+            "$_XOR_": 9
+         }
+      }
+   },
+      "design": {
+         "num_wires":         60,
+         "num_wire_bits":     81,
+         "num_pub_wires":     13,
+         "num_pub_wire_bits": 34,
+         "num_ports":         5,
+         "num_port_bits":     26,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         56,
+         "num_cells_by_type": {
+            "$_ANDNOT_": 28,
+            "$_AND_": 3,
+            "$_NAND_": 7,
+            "$_OR_": 2,
+            "$_XNOR_": 7,
+            "$_XOR_": 9
+         }
+      }
+}
+
+55. Printing statistics.
+
+=== generic_ripple_carry_adder ===
+
+   Number of wires:                 60
+   Number of wire bits:             81
+   Number of public wires:          13
+   Number of public wire bits:      34
+   Number of ports:                  5
+   Number of port bits:             26
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 56
+     $_ANDNOT_                      28
+     $_AND_                          3
+     $_NAND_                         7
+     $_OR_                           2
+     $_XNOR_                         7
+     $_XOR_                          9
+
+   Area for cell type $_AND_ is unknown!
+   Area for cell type $_NAND_ is unknown!
+   Area for cell type $_OR_ is unknown!
+   Area for cell type $_XOR_ is unknown!
+   Area for cell type $_XNOR_ is unknown!
+   Area for cell type $_ANDNOT_ is unknown!
+
+[INFO] Using generated ABC script '/home/amostafa/CMP/VLSI/runs/RUN_2024-11-27_13-41-18/01-yosys-synthesis/AREA_0.abc'…
+
+56. Executing ABC pass (technology mapping using ABC).
+
+56.1. Extracting gate netlist of module `\generic_ripple_carry_adder' to `/tmp/yosys-abc-Xo33oz/input.blif'..
+Extracted 56 gates and 73 wires to a netlist network with 17 inputs and 9 outputs.
+
+56.1.1. Executing ABC.
+Running ABC command: "/nix/store/6l3aj1gi4lja8z5s4lan2k2cfz9mqkrz-yosys-abc/bin/abc" -s -f /tmp/yosys-abc-Xo33oz/abc.script 2>&1
+ABC: ABC command line: "source /tmp/yosys-abc-Xo33oz/abc.script".
+ABC: 
+ABC: + read_blif /tmp/yosys-abc-Xo33oz/input.blif 
+ABC: + read_lib -w /home/amostafa/CMP/VLSI/runs/RUN_2024-11-27_13-41-18/tmp/f72bb3db3a154bb7aa91ac6b2e275306.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.04 sec
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfsbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_8".
+ABC: Library "sky130_fd_sc_hd__tt_025C_1v80" from "/home/amostafa/CMP/VLSI/runs/RUN_2024-11-27_13-41-18/tmp/f72bb3db3a154bb7aa91ac6b2e275306.lib" has 175 cells (17 skipped: 14 seq; 3 tri-state; 0 no func; 0 dont_use).  Time =     0.05 sec
+ABC: Memory =    9.54 MB. Time =     0.05 sec
+ABC: Warning: Detected 2 multi-output gates (for example, "sky130_fd_sc_hd__fa_1").
+ABC: + read_constr -v /home/amostafa/CMP/VLSI/runs/RUN_2024-11-27_13-41-18/01-yosys-synthesis/synthesis.abc.sdc 
+ABC: Setting driving cell to be "sky130_fd_sc_hd__inv_2/Y".
+ABC: Setting output load to be 33.442001.
+ABC: + source /home/amostafa/CMP/VLSI/runs/RUN_2024-11-27_13-41-18/01-yosys-synthesis/AREA_0.abc 
+ABC: Error: The network is combinational.
+ABC: Cannot find the default PI driving cell (sky130_fd_sc_hd__inv_2/Y) in the library.
+ABC: WireLoad = "none"  Gates =     43 (  2.3 %)   Cap = 11.3 ff (  1.5 %)   Area =      361.60 ( 95.3 %)   Delay =  1571.24 ps  ( 20.9 %)               
+ABC: Path  0 --       4 : 0    3 pi                       A =   0.00  Df =   0.0   -0.0 ps  S =   0.0 ps  Cin =  0.0 ff  Cout =  10.8 ff  Cmax =   0.0 ff  G =    0  
+ABC: Path  1 --      27 : 2    3 sky130_fd_sc_hd__nor2_2  A =   6.26  Df = 118.8  -91.5 ps  S = 122.1 ps  Cin =  4.4 ff  Cout =   8.7 ff  Cmax = 141.9 ff  G =  187  
+ABC: Path  2 --      39 : 5    2 sky130_fd_sc_hd__o311a_2 A =  11.26  Df = 406.8  -96.8 ps  S =  57.7 ps  Cin =  2.4 ff  Cout =   4.0 ff  Cmax = 293.9 ff  G =  160  
+ABC: Path  3 --      54 : 5    2 sky130_fd_sc_hd__o311a_2 A =  11.26  Df = 791.8 -298.2 ps  S =  65.8 ps  Cin =  2.4 ff  Cout =   7.2 ff  Cmax = 293.9 ff  G =  287  
+ABC: Path  4 --      60 : 4    2 sky130_fd_sc_hd__o31a_2  A =  10.01  Df =1114.9 -462.4 ps  S =  87.8 ps  Cin =  2.3 ff  Cout =  13.2 ff  Cmax = 285.7 ff  G =  540  
+ABC: Path  5 --      64 : 3    2 sky130_fd_sc_hd__o21ai_2 A =   8.76  Df =1292.3 -562.7 ps  S = 174.2 ps  Cin =  4.5 ff  Cout =  11.5 ff  Cmax = 139.2 ff  G =  243  
+ABC: Path  6 --      67 : 2    1 sky130_fd_sc_hd__xnor2_2 A =  16.27  Df =1571.2 -445.9 ps  S = 453.9 ps  Cin =  8.5 ff  Cout =  33.4 ff  Cmax = 121.8 ff  G =  394  
+ABC: Start-point = pi3 (\A [0]).  End-point = po7 (\ripple_adder[7].FA.sum).
+ABC: netlist                       : i/o =   17/    9  lat =    0  nd =    43  edge =    107  area =361.71  delay = 6.00  lev = 6
+ABC: + write_blif /tmp/yosys-abc-Xo33oz/output.blif 
+
+56.1.2. Re-integrating ABC results.
+ABC RESULTS:   sky130_fd_sc_hd__inv_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a21oi_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o21a_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__a2bb2o_2 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__nand2b_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o311a_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__nor2_2 cells:        8
+ABC RESULTS:   sky130_fd_sc_hd__and2b_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__o31a_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__or2_2 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__o21ai_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a21bo_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nand2_2 cells:       11
+ABC RESULTS:   sky130_fd_sc_hd__xnor2_2 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__and3_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o22a_2 cells:        1
+ABC RESULTS:        internal signals:       47
+ABC RESULTS:           input signals:       17
+ABC RESULTS:          output signals:        9
+Removing temp directory.
+
+57. Executing SETUNDEF pass (replace undef values with defined constants).
+
+58. Executing HILOMAP pass (mapping to constant drivers).
+
+59. Executing SPLITNETS pass (splitting up multi-bit signals).
+
+60. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \generic_ripple_carry_adder..
+Removed 0 unused cells and 73 unused wires.
+<suppressed ~1 debug messages>
+
+61. Executing INSBUF pass (insert buffer cells for connected wires).
+Add generic_ripple_carry_adder/$auto$insbuf.cc:97:execute$251: \ripple_adder[0].FA.sum -> \Sum [0]
+Add generic_ripple_carry_adder/$auto$insbuf.cc:97:execute$252: \ripple_adder[1].FA.sum -> \Sum [1]
+Add generic_ripple_carry_adder/$auto$insbuf.cc:97:execute$253: \ripple_adder[2].FA.sum -> \Sum [2]
+Add generic_ripple_carry_adder/$auto$insbuf.cc:97:execute$254: \ripple_adder[3].FA.sum -> \Sum [3]
+Add generic_ripple_carry_adder/$auto$insbuf.cc:97:execute$255: \ripple_adder[4].FA.sum -> \Sum [4]
+Add generic_ripple_carry_adder/$auto$insbuf.cc:97:execute$256: \ripple_adder[5].FA.sum -> \Sum [5]
+Add generic_ripple_carry_adder/$auto$insbuf.cc:97:execute$257: \ripple_adder[6].FA.sum -> \Sum [6]
+Add generic_ripple_carry_adder/$auto$insbuf.cc:97:execute$258: \ripple_adder[7].FA.sum -> \Sum [7]
+
+62. Executing CHECK pass (checking for obvious problems).
+Checking module generic_ripple_carry_adder...
+Found and reported 0 problems.
+{
+   "creator": "Yosys 0.46 (git sha1 e97731b9dda91fa5fa53ed87df7c34163ba59a41, clang++ 17.0.6 -fPIC -O3)",
+   "invocation": "stat -json -liberty /home/amostafa/CMP/VLSI/runs/RUN_2024-11-27_13-41-18/tmp/f72bb3db3a154bb7aa91ac6b2e275306.lib ",
+   "modules": {
+      "\\generic_ripple_carry_adder": {
+         "num_wires":         47,
+         "num_wire_bits":     68,
+         "num_pub_wires":     13,
+         "num_pub_wire_bits": 34,
+         "num_ports":         5,
+         "num_port_bits":     26,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         51,
+         "area":              401.635200,
+         "num_cells_by_type": {
+            "sky130_fd_sc_hd__a21bo_2": 1,
+            "sky130_fd_sc_hd__a21oi_2": 1,
+            "sky130_fd_sc_hd__a2bb2o_2": 3,
+            "sky130_fd_sc_hd__and2b_2": 2,
+            "sky130_fd_sc_hd__and3_2": 1,
+            "sky130_fd_sc_hd__buf_2": 8,
+            "sky130_fd_sc_hd__inv_2": 1,
+            "sky130_fd_sc_hd__nand2_2": 11,
+            "sky130_fd_sc_hd__nand2b_2": 1,
+            "sky130_fd_sc_hd__nor2_2": 8,
+            "sky130_fd_sc_hd__o21a_2": 2,
+            "sky130_fd_sc_hd__o21ai_2": 1,
+            "sky130_fd_sc_hd__o22a_2": 1,
+            "sky130_fd_sc_hd__o311a_2": 2,
+            "sky130_fd_sc_hd__o31a_2": 1,
+            "sky130_fd_sc_hd__or2_2": 3,
+            "sky130_fd_sc_hd__xnor2_2": 4
+         }
+      }
+   },
+      "design": {
+         "num_wires":         47,
+         "num_wire_bits":     68,
+         "num_pub_wires":     13,
+         "num_pub_wire_bits": 34,
+         "num_ports":         5,
+         "num_port_bits":     26,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         51,
+         "area":              401.635200,
+         "num_cells_by_type": {
+            "sky130_fd_sc_hd__a21bo_2": 1,
+            "sky130_fd_sc_hd__a21oi_2": 1,
+            "sky130_fd_sc_hd__a2bb2o_2": 3,
+            "sky130_fd_sc_hd__and2b_2": 2,
+            "sky130_fd_sc_hd__and3_2": 1,
+            "sky130_fd_sc_hd__buf_2": 8,
+            "sky130_fd_sc_hd__inv_2": 1,
+            "sky130_fd_sc_hd__nand2_2": 11,
+            "sky130_fd_sc_hd__nand2b_2": 1,
+            "sky130_fd_sc_hd__nor2_2": 8,
+            "sky130_fd_sc_hd__o21a_2": 2,
+            "sky130_fd_sc_hd__o21ai_2": 1,
+            "sky130_fd_sc_hd__o22a_2": 1,
+            "sky130_fd_sc_hd__o311a_2": 2,
+            "sky130_fd_sc_hd__o31a_2": 1,
+            "sky130_fd_sc_hd__or2_2": 3,
+            "sky130_fd_sc_hd__xnor2_2": 4
+         }
+      }
+}
+
+63. Printing statistics.
+
+=== generic_ripple_carry_adder ===
+
+   Number of wires:                 47
+   Number of wire bits:             68
+   Number of public wires:          13
+   Number of public wire bits:      34
+   Number of ports:                  5
+   Number of port bits:             26
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 51
+     sky130_fd_sc_hd__a21bo_2        1
+     sky130_fd_sc_hd__a21oi_2        1
+     sky130_fd_sc_hd__a2bb2o_2       3
+     sky130_fd_sc_hd__and2b_2        2
+     sky130_fd_sc_hd__and3_2         1
+     sky130_fd_sc_hd__buf_2          8
+     sky130_fd_sc_hd__inv_2          1
+     sky130_fd_sc_hd__nand2_2       11
+     sky130_fd_sc_hd__nand2b_2       1
+     sky130_fd_sc_hd__nor2_2         8
+     sky130_fd_sc_hd__o21a_2         2
+     sky130_fd_sc_hd__o21ai_2        1
+     sky130_fd_sc_hd__o22a_2         1
+     sky130_fd_sc_hd__o311a_2        2
+     sky130_fd_sc_hd__o31a_2         1
+     sky130_fd_sc_hd__or2_2          3
+     sky130_fd_sc_hd__xnor2_2        4
+
+   Chip area for module '\generic_ripple_carry_adder': 401.635200
+     of which used for sequential elements: 0.000000 (0.00%)
+
+64. Executing Verilog backend.
+Dumping module `\generic_ripple_carry_adder'.
+
+65. Executing JSON backend.
