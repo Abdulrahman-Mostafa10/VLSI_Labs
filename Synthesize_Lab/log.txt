@@ -1,0 +1,68 @@
+[12:22:17] INFO     Starting a new run of the 'Custom Sequential Flow' flow    flow.py:628
+                    with the tag 'RUN_2024-11-27_12-22-17'.                               
+[12:22:17] INFO     Starting…                                            sequential.py:278
+─────────────────────────────────────── Synthesis ────────────────────────────────────────
+[12:22:17] VERBOSE  Running 'Yosys.Synthesis' at                              step.py:1122
+                    'runs/RUN_2024-11-27_12-22-17/1-yosys-synthesis'…                     
+[12:22:17] VERBOSE  Logging subprocess to                                     step.py:1318
+                    'runs/RUN_2024-11-27_12-22-17/1-yosys-synthesis/yosys-syn             
+                    thesis.log'…                                                          
+                                                                                          
+/----------------------------------------------------------------------------\            
+|  yosys -- Yosys Open SYnthesis Suite                                       |            
+|  Copyright (C) 2012 - 2024  Claire Xenia Wolf <claire@yosyshq.com>         |            
+|  Distributed under an ISC-like license, type "license" to see terms        |            
+\----------------------------------------------------------------------------/            
+Yosys 0.46 (git sha1 e97731b9dda91fa5fa53ed87df7c34163ba59a41, clang++ 17.0.6 -fPIC -O3)  
+Loaded SDC plugin                                                                         
+                                                                                          
+1. Executing Liberty frontend:                                                            
+/home/amostafa/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky
+130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib                       
+Imported 428 cell types from liberty file.                                                
+[INFO] Using SDC file                                                                     
+'/home/amostafa/CMP/VLSI/runs/RUN_2024-11-27_12-22-17/1-yosys-synthesis/synthesis.abc.sdc'
+for ABC…                                                                                  
+                                                                                          
+2. Executing Verilog-2005 frontend: ./pipelined_multiplier.v                              
+Parsing SystemVerilog input from `./pipelined_multiplier.v' to AST representation.        
+Storing AST representation for module `$abstract\generic_piplined_multiplier'.            
+Successfully finished Verilog frontend.                                                   
+                                                                                          
+3. Executing HIERARCHY pass (managing design hierarchy).                                  
+ERROR: Module `Pipelined_Multiplier' not found!                                           
+[12:22:18] ERROR    Subprocess had a non-zero exit.                           step.py:1364
+[12:22:18] ERROR    Last 10 line(s):                                          step.py:1369
+                    Imported 428 cell types from liberty file.                            
+                    [INFO] Using SDC file                                                 
+                    '/home/amostafa/CMP/VLSI/runs/RUN_2024-11-27_12-22-17/1-y             
+                    osys-synthesis/synthesis.abc.sdc' for ABC…                            
+                                                                                          
+                    2. Executing Verilog-2005 frontend:                                   
+                    ./pipelined_multiplier.v                                              
+                    Parsing SystemVerilog input from                                      
+                    `./pipelined_multiplier.v' to AST representation.                     
+                    Storing AST representation for module                                 
+                    `$abstract\generic_piplined_multiplier'.                              
+                    Successfully finished Verilog frontend.                               
+                                                                                          
+                    3. Executing HIERARCHY pass (managing design hierarchy).              
+                    ERROR: Module `Pipelined_Multiplier' not found!                       
+                                                                                          
+[12:22:18] ERROR    Full log file:                                            step.py:1372
+                    'runs/RUN_2024-11-27_12-22-17/1-yosys-synthesis/yosys-syn             
+                    thesis.log'                                                           
+Custom Sequential Flow - Stage 1 - Synthesis                                   0/1 0:00:00
+[12:22:18] ERROR    The following error was encountered while running the  __main__.py:163
+                    flow:                                                                 
+                    Synthesis: subprocess (1, ['yosys', '-y',                             
+                    '/nix/store/giv9dbfir1g36hiqrccwznrmafdg2jhb-python3-3                
+                    .11.9-env/lib/python3.11/site-packages/openlane/script                
+                    s/pyosys/synthesize.py', '--', '--config-in',                         
+                    '/home/amostafa/CMP/VLSI/runs/RUN_2024-11-27_12-22-17/                
+                    1-yosys-synthesis/config.json', '--extra-in',                         
+                    '/home/amostafa/CMP/VLSI/runs/RUN_2024-11-27_12-22-17/                
+                    1-yosys-synthesis/extra.json', '--output',                            
+                    '/home/amostafa/CMP/VLSI/runs/RUN_2024-11-27_12-22-17/                
+                    1-yosys-synthesis/Pipelined_Multiplier.nl.v']) failed                 
+[12:22:18] ERROR    OpenLane will now quit.                                __main__.py:164
