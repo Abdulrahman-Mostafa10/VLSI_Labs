@@ -1,0 +1,62 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2024  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.46 (git sha1 e97731b9dda91fa5fa53ed87df7c34163ba59a41, clang++ 17.0.6 -fPIC -O3)
+Loaded SDC plugin
+
+1. Executing Liberty frontend: /home/amostafa/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+Imported 428 cell types from liberty file.
+[INFO] Using SDC file '/home/amostafa/vlsi/runs/RUN_2024-12-04_00-26-45/01-yosys-synthesis/synthesis.abc.sdc' for ABC…
+
+2. Executing Verilog-2005 frontend: ./counter_dut.v
+Parsing SystemVerilog input from `./counter_dut.v' to AST representation.
+Storing AST representation for module `$abstract\counter_dut'.
+Successfully finished Verilog frontend.
+
+3. Executing HIERARCHY pass (managing design hierarchy).
+
+4. Executing AST frontend in derive mode using pre-parsed AST for module `\counter_dut'.
+Generating RTLIL representation for module `\counter_dut'.
+
+4.1. Analyzing design hierarchy..
+Top module:  \counter_dut
+
+4.2. Analyzing design hierarchy..
+Top module:  \counter_dut
+Removing unused module `$abstract\counter_dut'.
+Removed 1 unused modules.
+Renaming module counter_dut to counter_dut.
+
+5. Generating Graphviz representation of design.
+Writing dot description to `/home/amostafa/vlsi/runs/RUN_2024-12-04_00-26-45/01-yosys-synthesis/hierarchy.dot'.
+Dumping module counter_dut to page 1.
+
+6. Executing TRIBUF pass.
+
+7. Executing HIERARCHY pass (managing design hierarchy).
+
+7.1. Analyzing design hierarchy..
+Top module:  \counter_dut
+
+7.2. Analyzing design hierarchy..
+Top module:  \counter_dut
+Removed 0 unused modules.
+
+8. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+9. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 5 switch rules as full_case in process $proc$./counter_dut.v:9$1 in module counter_dut.
+Removed a total of 0 dead cases.
+
+10. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 0 assignments to connections.
+
+11. Executing PROC_INIT pass (extract init attributes).
+
+12. Executing PROC_ARST pass (detect async resets in processes).
+ERROR: Async reset \reset yields non-constant value 4'mmmm for signal \counter.
