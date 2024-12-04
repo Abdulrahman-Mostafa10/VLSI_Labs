@@ -1,3 +1,4 @@
+`timescale 1ns / 1ps
 module counter_tb;
 
     // Testbench signals
@@ -8,7 +9,7 @@ module counter_tb;
     wire [3:0] counter;
 
     // Instantiate the DUT
-    counter_dut uut (
+    counter_dut_routing uut (
         .clock(clock),
         .reset(reset),
         .enable(enable),
