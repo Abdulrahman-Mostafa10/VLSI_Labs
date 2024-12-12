@@ -1,0 +1,80 @@
+
+===========================================================================
+report_checks -unconstrained
+===========================================================================
+======================= max_ss_100C_1v60 Corner ===================================
+
+Startpoint: up_down (input port clocked by clk)
+Endpoint: _49_ (rising edge-triggered flip-flop)
+Path Group: unconstrained
+Path Type: max
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                                  2.000000    2.000000 v input external delay
+     1    0.002298    0.016558    0.007691    2.007691 v up_down (in)
+                                                         up_down (net)
+                      0.016558    0.000000    2.007691 v input4/A (sky130_fd_sc_hd__buf_1)
+     5    0.012434    0.149940    0.217085    2.224776 v input4/X (sky130_fd_sc_hd__buf_1)
+                                                         net4 (net)
+                      0.149941    0.000590    2.225366 v _41_/A1 (sky130_fd_sc_hd__o31ai_1)
+     2    0.007546    0.541300    0.616151    2.841517 ^ _41_/Y (sky130_fd_sc_hd__o31ai_1)
+                                                         _19_ (net)
+                      0.541300    0.000471    2.841987 ^ _44_/C (sky130_fd_sc_hd__nand4_1)
+     1    0.002824    0.189977    0.349831    3.191818 v _44_/Y (sky130_fd_sc_hd__nand4_1)
+                                                         _22_ (net)
+                      0.189977    0.000203    3.192021 v _45_/A3 (sky130_fd_sc_hd__a31o_1)
+     1    0.002209    0.060815    0.429094    3.621115 v _45_/X (sky130_fd_sc_hd__a31o_1)
+                                                         _03_ (net)
+                      0.060815    0.000162    3.621278 v _49_/D (sky130_fd_sc_hd__dfxtp_1)
+                                              3.621278   data arrival time
+---------------------------------------------------------------------------------------------
+(Path is unconstrained)
+
+
+
+
+===========================================================================
+report_checks --slack_max -0.01
+============================================================================
+======================= max_ss_100C_1v60 Corner ===================================
+
+No paths found.
+
+
+===========================================================================
+ report_check_types -max_slew -max_cap -max_fanout -violators
+============================================================================
+======================= max_ss_100C_1v60 Corner ===================================
+
+
+
+===========================================================================
+report_parasitic_annotation -report_unannotated
+============================================================================
+Found 0 unannotated drivers.
+Found 0 partially unannotated drivers.
+
+===========================================================================
+max slew violation count 0
+max fanout violation count 0
+max cap violation count 0
+============================================================================
+
+===========================================================================
+check_setup -verbose -unconstrained_endpoints -multiple_clock -no_clock -no_input_delay -loops -generated_clocks
+===========================================================================
+Warning: There are 4 unclocked register/latch pins.
+  _46_/CLK
+  _47_/CLK
+  _48_/CLK
+  _49_/CLK
+Warning: There are 8 unconstrained endpoints.
+  counter[0]
+  counter[1]
+  counter[2]
+  counter[3]
+  _46_/D
+  _47_/D
+  _48_/D
+  _49_/D

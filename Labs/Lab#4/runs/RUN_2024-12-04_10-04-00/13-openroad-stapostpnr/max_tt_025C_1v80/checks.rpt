@@ -1,0 +1,80 @@
+
+===========================================================================
+report_checks -unconstrained
+===========================================================================
+======================= max_tt_025C_1v80 Corner ===================================
+
+Startpoint: up_down (input port clocked by clk)
+Endpoint: _49_ (rising edge-triggered flip-flop)
+Path Group: unconstrained
+Path Type: max
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                                  2.000000    2.000000 v input external delay
+     1    0.002317    0.007503    0.003652    2.003652 v up_down (in)
+                                                         up_down (net)
+                      0.007504    0.000000    2.003652 v input4/A (sky130_fd_sc_hd__buf_1)
+     5    0.012484    0.078363    0.114522    2.118174 v input4/X (sky130_fd_sc_hd__buf_1)
+                                                         net4 (net)
+                      0.078366    0.000591    2.118765 v _41_/A1 (sky130_fd_sc_hd__o31ai_1)
+     2    0.007542    0.315700    0.343658    2.462424 ^ _41_/Y (sky130_fd_sc_hd__o31ai_1)
+                                                         _19_ (net)
+                      0.315700    0.000470    2.462894 ^ _44_/C (sky130_fd_sc_hd__nand4_1)
+     1    0.002791    0.089478    0.131996    2.594890 v _44_/Y (sky130_fd_sc_hd__nand4_1)
+                                                         _22_ (net)
+                      0.089479    0.000200    2.595089 v _45_/A3 (sky130_fd_sc_hd__a31o_1)
+     1    0.002270    0.034303    0.223881    2.818970 v _45_/X (sky130_fd_sc_hd__a31o_1)
+                                                         _03_ (net)
+                      0.034303    0.000167    2.819138 v _49_/D (sky130_fd_sc_hd__dfxtp_1)
+                                              2.819138   data arrival time
+---------------------------------------------------------------------------------------------
+(Path is unconstrained)
+
+
+
+
+===========================================================================
+report_checks --slack_max -0.01
+============================================================================
+======================= max_tt_025C_1v80 Corner ===================================
+
+No paths found.
+
+
+===========================================================================
+ report_check_types -max_slew -max_cap -max_fanout -violators
+============================================================================
+======================= max_tt_025C_1v80 Corner ===================================
+
+
+
+===========================================================================
+report_parasitic_annotation -report_unannotated
+============================================================================
+Found 0 unannotated drivers.
+Found 0 partially unannotated drivers.
+
+===========================================================================
+max slew violation count 0
+max fanout violation count 0
+max cap violation count 0
+============================================================================
+
+===========================================================================
+check_setup -verbose -unconstrained_endpoints -multiple_clock -no_clock -no_input_delay -loops -generated_clocks
+===========================================================================
+Warning: There are 4 unclocked register/latch pins.
+  _46_/CLK
+  _47_/CLK
+  _48_/CLK
+  _49_/CLK
+Warning: There are 8 unconstrained endpoints.
+  counter[0]
+  counter[1]
+  counter[2]
+  counter[3]
+  _46_/D
+  _47_/D
+  _48_/D
+  _49_/D

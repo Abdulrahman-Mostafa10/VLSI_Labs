@@ -1,0 +1,158 @@
+VERSION 5.8 ;
+DIVIDERCHAR "/" ;
+BUSBITCHARS "[]" ;
+DESIGN counter_dut ;
+UNITS DISTANCE MICRONS 1000 ;
+DIEAREA ( 0 0 ) ( 35030 45750 ) ;
+ROW ROW_0 unithd 5520 10880 N DO 52 BY 1 STEP 460 0 ;
+ROW ROW_1 unithd 5520 13600 FS DO 52 BY 1 STEP 460 0 ;
+ROW ROW_2 unithd 5520 16320 N DO 52 BY 1 STEP 460 0 ;
+ROW ROW_3 unithd 5520 19040 FS DO 52 BY 1 STEP 460 0 ;
+ROW ROW_4 unithd 5520 21760 N DO 52 BY 1 STEP 460 0 ;
+ROW ROW_5 unithd 5520 24480 FS DO 52 BY 1 STEP 460 0 ;
+ROW ROW_6 unithd 5520 27200 N DO 52 BY 1 STEP 460 0 ;
+ROW ROW_7 unithd 5520 29920 FS DO 52 BY 1 STEP 460 0 ;
+TRACKS X 230 DO 76 STEP 460 LAYER li1 ;
+TRACKS Y 170 DO 134 STEP 340 LAYER li1 ;
+TRACKS X 170 DO 103 STEP 340 LAYER met1 ;
+TRACKS Y 170 DO 134 STEP 340 LAYER met1 ;
+TRACKS X 230 DO 76 STEP 460 LAYER met2 ;
+TRACKS Y 230 DO 99 STEP 460 LAYER met2 ;
+TRACKS X 340 DO 51 STEP 680 LAYER met3 ;
+TRACKS Y 340 DO 67 STEP 680 LAYER met3 ;
+TRACKS X 460 DO 38 STEP 920 LAYER met4 ;
+TRACKS Y 460 DO 50 STEP 920 LAYER met4 ;
+TRACKS X 1700 DO 10 STEP 3400 LAYER met5 ;
+TRACKS Y 1700 DO 13 STEP 3400 LAYER met5 ;
+COMPONENTS 34 ;
+    - _23_ sky130_fd_sc_hd__inv_2 + PLACED ( 10120 21760 ) N ;
+    - _24_ sky130_fd_sc_hd__nand2_1 + PLACED ( 15640 24480 ) FS ;
+    - _25_ sky130_fd_sc_hd__nor2_1 + PLACED ( 8740 21760 ) N ;
+    - _26_ sky130_fd_sc_hd__nor2_1 + PLACED ( 8740 24480 ) S ;
+    - _27_ sky130_fd_sc_hd__a21oi_1 + PLACED ( 18860 21760 ) N ;
+    - _28_ sky130_fd_sc_hd__o21ai_1 + PLACED ( 17480 24480 ) FS ;
+    - _29_ sky130_fd_sc_hd__xor2_1 + PLACED ( 13800 13600 ) S ;
+    - _30_ sky130_fd_sc_hd__or2_1 + PLACED ( 11500 13600 ) FS ;
+    - _31_ sky130_fd_sc_hd__nand2_1 + PLACED ( 10120 13600 ) S ;
+    - _32_ sky130_fd_sc_hd__nand2_1 + PLACED ( 12420 19040 ) FS ;
+    - _33_ sky130_fd_sc_hd__a21o_1 + PLACED ( 11960 21760 ) N ;
+    - _34_ sky130_fd_sc_hd__a31o_1 + PLACED ( 9200 19040 ) FS ;
+    - _35_ sky130_fd_sc_hd__a21o_1 + PLACED ( 23460 16320 ) N ;
+    - _36_ sky130_fd_sc_hd__nand3_1 + PLACED ( 20700 16320 ) FN ;
+    - _37_ sky130_fd_sc_hd__nand2_1 + PLACED ( 20700 13600 ) FS ;
+    - _38_ sky130_fd_sc_hd__xnor2_1 + PLACED ( 17020 16320 ) N ;
+    - _39_ sky130_fd_sc_hd__a21oi_1 + PLACED ( 18860 27200 ) N ;
+    - _40_ sky130_fd_sc_hd__o21ai_1 + PLACED ( 19320 24480 ) FS ;
+    - _41_ sky130_fd_sc_hd__o31ai_1 + PLACED ( 14260 16320 ) N ;
+    - _42_ sky130_fd_sc_hd__nand2b_1 + PLACED ( 14720 21760 ) N ;
+    - _43_ sky130_fd_sc_hd__a31o_1 + PLACED ( 10120 24480 ) FS ;
+    - _44_ sky130_fd_sc_hd__nand4_1 + PLACED ( 13340 24480 ) S ;
+    - _45_ sky130_fd_sc_hd__a31o_1 + PLACED ( 9200 29920 ) FS ;
+    - _46_ sky130_fd_sc_hd__dfxtp_1 + PLACED ( 20700 21760 ) N ;
+    - _47_ sky130_fd_sc_hd__dfxtp_1 + PLACED ( 6440 16320 ) N ;
+    - _48_ sky130_fd_sc_hd__dfxtp_1 + PLACED ( 21160 24480 ) FS ;
+    - _49_ sky130_fd_sc_hd__dfxtp_1 + PLACED ( 6440 27200 ) N ;
+    - input1 sky130_fd_sc_hd__buf_1 + SOURCE TIMING + PLACED ( 6900 24480 ) FS ;
+    - input2 sky130_fd_sc_hd__buf_1 + SOURCE TIMING + PLACED ( 5520 24480 ) FS ;
+    - input3 sky130_fd_sc_hd__buf_1 + SOURCE TIMING + PLACED ( 5520 13600 ) FS ;
+    - output4 sky130_fd_sc_hd__buf_1 + SOURCE TIMING + PLACED ( 28060 21760 ) N ;
+    - output5 sky130_fd_sc_hd__buf_1 + SOURCE TIMING + PLACED ( 28060 19040 ) FS ;
+    - output6 sky130_fd_sc_hd__buf_1 + SOURCE TIMING + PLACED ( 28060 16320 ) N ;
+    - output7 sky130_fd_sc_hd__buf_1 + SOURCE TIMING + PLACED ( 5520 29920 ) S ;
+END COMPONENTS
+PINS 8 ;
+    - clk + NET clk + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -2000 -300 ) ( 2000 300 )
+        + PLACED ( 2000 20740 ) N ;
+    - counter[0] + NET counter[0] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -2000 -300 ) ( 2000 300 )
+        + PLACED ( 33030 24140 ) N ;
+    - counter[1] + NET counter[1] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -2000 -300 ) ( 2000 300 )
+        + PLACED ( 33030 20740 ) N ;
+    - counter[2] + NET counter[2] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -2000 -300 ) ( 2000 300 )
+        + PLACED ( 33030 17340 ) N ;
+    - counter[3] + NET counter[3] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -2000 -300 ) ( 2000 300 )
+        + PLACED ( 2000 30940 ) N ;
+    - enable + NET enable + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -2000 -300 ) ( 2000 300 )
+        + PLACED ( 2000 24140 ) N ;
+    - reset + NET reset + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -2000 -300 ) ( 2000 300 )
+        + PLACED ( 2000 27540 ) N ;
+    - up_down + NET up_down + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -2000 -300 ) ( 2000 300 )
+        + PLACED ( 2000 17340 ) N ;
+END PINS
+SPECIALNETS 2 ;
+    - VGND ( output7 VNB ) ( output6 VNB ) ( output5 VNB ) ( output4 VNB ) ( input3 VNB ) ( input2 VNB ) ( input1 VNB )
+      ( output7 VGND ) ( output6 VGND ) ( output5 VGND ) ( output4 VGND ) ( input3 VGND ) ( input2 VGND ) ( input1 VGND ) ( _49_ VNB )
+      ( _48_ VNB ) ( _47_ VNB ) ( _46_ VNB ) ( _45_ VNB ) ( _44_ VNB ) ( _43_ VNB ) ( _42_ VNB ) ( _41_ VNB )
+      ( _40_ VNB ) ( _39_ VNB ) ( _38_ VNB ) ( _37_ VNB ) ( _36_ VNB ) ( _35_ VNB ) ( _34_ VNB ) ( _33_ VNB )
+      ( _32_ VNB ) ( _31_ VNB ) ( _30_ VNB ) ( _29_ VNB ) ( _28_ VNB ) ( _27_ VNB ) ( _26_ VNB ) ( _25_ VNB )
+      ( _24_ VNB ) ( _23_ VNB ) ( _49_ VGND ) ( _48_ VGND ) ( _47_ VGND ) ( _46_ VGND ) ( _45_ VGND ) ( _44_ VGND )
+      ( _43_ VGND ) ( _42_ VGND ) ( _41_ VGND ) ( _40_ VGND ) ( _39_ VGND ) ( _38_ VGND ) ( _37_ VGND ) ( _36_ VGND )
+      ( _35_ VGND ) ( _34_ VGND ) ( _33_ VGND ) ( _32_ VGND ) ( _31_ VGND ) ( _30_ VGND ) ( _29_ VGND ) ( _28_ VGND )
+      ( _27_ VGND ) ( _26_ VGND ) ( _25_ VGND ) ( _24_ VGND ) ( _23_ VGND ) + USE GROUND ;
+    - VPWR ( output7 VPB ) ( output6 VPB ) ( output5 VPB ) ( output4 VPB ) ( input3 VPB ) ( input2 VPB ) ( input1 VPB )
+      ( output7 VPWR ) ( output6 VPWR ) ( output5 VPWR ) ( output4 VPWR ) ( input3 VPWR ) ( input2 VPWR ) ( input1 VPWR ) ( _49_ VPB )
+      ( _48_ VPB ) ( _47_ VPB ) ( _46_ VPB ) ( _45_ VPB ) ( _44_ VPB ) ( _43_ VPB ) ( _42_ VPB ) ( _41_ VPB )
+      ( _40_ VPB ) ( _39_ VPB ) ( _38_ VPB ) ( _37_ VPB ) ( _36_ VPB ) ( _35_ VPB ) ( _34_ VPB ) ( _33_ VPB )
+      ( _32_ VPB ) ( _31_ VPB ) ( _30_ VPB ) ( _29_ VPB ) ( _28_ VPB ) ( _27_ VPB ) ( _26_ VPB ) ( _25_ VPB )
+      ( _24_ VPB ) ( _23_ VPB ) ( _49_ VPWR ) ( _48_ VPWR ) ( _47_ VPWR ) ( _46_ VPWR ) ( _45_ VPWR ) ( _44_ VPWR )
+      ( _43_ VPWR ) ( _42_ VPWR ) ( _41_ VPWR ) ( _40_ VPWR ) ( _39_ VPWR ) ( _38_ VPWR ) ( _37_ VPWR ) ( _36_ VPWR )
+      ( _35_ VPWR ) ( _34_ VPWR ) ( _33_ VPWR ) ( _32_ VPWR ) ( _31_ VPWR ) ( _30_ VPWR ) ( _29_ VPWR ) ( _28_ VPWR )
+      ( _27_ VPWR ) ( _26_ VPWR ) ( _25_ VPWR ) ( _24_ VPWR ) ( _23_ VPWR ) + USE POWER ;
+END SPECIALNETS
+NETS 38 ;
+    - _00_ ( _46_ D ) ( _28_ Y ) + USE SIGNAL ;
+    - _01_ ( _47_ D ) ( _34_ X ) + USE SIGNAL ;
+    - _02_ ( _48_ D ) ( _40_ Y ) + USE SIGNAL ;
+    - _03_ ( _49_ D ) ( _45_ X ) + USE SIGNAL ;
+    - _04_ ( _45_ A1 ) ( _34_ A2 ) ( _25_ A ) ( _24_ B ) ( _23_ Y ) + USE SIGNAL ;
+    - _05_ ( _40_ A1 ) ( _28_ A2 ) ( _24_ Y ) + USE SIGNAL ;
+    - _06_ ( _45_ B1 ) ( _39_ B1 ) ( _33_ B1 ) ( _27_ B1 ) ( _25_ Y ) + USE SIGNAL ;
+    - _07_ ( _39_ A2 ) ( _33_ A2 ) ( _27_ A2 ) ( _26_ Y ) + USE SIGNAL ;
+    - _08_ ( _28_ B1 ) ( _27_ Y ) + USE SIGNAL ;
+    - _09_ ( _31_ B ) ( _30_ B ) ( _29_ X ) + USE SIGNAL ;
+    - _10_ ( _38_ A ) ( _32_ A ) ( _30_ X ) + USE SIGNAL ;
+    - _11_ ( _32_ B ) ( _31_ Y ) + USE SIGNAL ;
+    - _12_ ( _34_ A3 ) ( _32_ Y ) + USE SIGNAL ;
+    - _13_ ( _34_ B1 ) ( _33_ X ) + USE SIGNAL ;
+    - _14_ ( _37_ A ) ( _35_ X ) + USE SIGNAL ;
+    - _15_ ( _41_ B1 ) ( _37_ B ) ( _36_ Y ) + USE SIGNAL ;
+    - _16_ ( _38_ B ) ( _37_ Y ) + USE SIGNAL ;
+    - _17_ ( _40_ A2 ) ( _38_ Y ) + USE SIGNAL ;
+    - _18_ ( _40_ B1 ) ( _39_ Y ) + USE SIGNAL ;
+    - _19_ ( _44_ C ) ( _43_ A2 ) ( _41_ Y ) + USE SIGNAL ;
+    - _20_ ( _44_ D ) ( _43_ A3 ) ( _42_ Y ) + USE SIGNAL ;
+    - _21_ ( _45_ A2 ) ( _43_ X ) + USE SIGNAL ;
+    - _22_ ( _45_ A3 ) ( _44_ Y ) + USE SIGNAL ;
+    - clk ( PIN clk ) ( _49_ CLK ) ( _48_ CLK ) ( _47_ CLK ) ( _46_ CLK ) + USE CLOCK ;
+    - counter[0] ( PIN counter[0] ) ( output4 X ) + USE SIGNAL ;
+    - counter[1] ( PIN counter[1] ) ( output5 X ) + USE SIGNAL ;
+    - counter[2] ( PIN counter[2] ) ( output6 X ) + USE SIGNAL ;
+    - counter[3] ( PIN counter[3] ) ( output7 X ) + USE SIGNAL ;
+    - enable ( PIN enable ) ( input1 A ) + USE SIGNAL ;
+    - net1 ( input1 X ) ( _44_ A ) ( _43_ A1 ) ( _34_ A1 ) ( _26_ A ) ( _24_ A ) + USE SIGNAL ;
+    - net2 ( input2 X ) ( _26_ B ) ( _23_ A ) + USE SIGNAL ;
+    - net3 ( input3 X ) ( _42_ A_N ) ( _41_ A1 ) ( _31_ A ) ( _30_ A ) ( _25_ B ) + USE SIGNAL ;
+    - net4 ( output4 A ) ( _46_ Q ) ( _41_ A2 ) ( _36_ A ) ( _35_ A1 ) ( _29_ A ) ( _28_ A1 )
+      ( _27_ A1 ) + USE SIGNAL ;
+    - net5 ( output5 A ) ( _47_ Q ) ( _41_ A3 ) ( _36_ B ) ( _35_ A2 ) ( _33_ A1 ) ( _29_ B ) + USE SIGNAL ;
+    - net6 ( output6 A ) ( _48_ Q ) ( _42_ B ) ( _39_ A1 ) ( _36_ C ) ( _35_ B1 ) + USE SIGNAL ;
+    - net7 ( output7 A ) ( _49_ Q ) ( _44_ B ) ( _43_ B1 ) + USE SIGNAL ;
+    - reset ( PIN reset ) ( input2 A ) + USE SIGNAL ;
+    - up_down ( PIN up_down ) ( input3 A ) + USE SIGNAL ;
+END NETS
+END DESIGN

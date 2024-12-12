@@ -1,0 +1,119 @@
+
+===========================================================================
+report_checks -unconstrained
+===========================================================================
+======================= nom_ss_100C_1v60 Corner ===================================
+
+Startpoint: up_down (input port clocked by clk)
+Endpoint: _49_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: max
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                      0.000000    0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (ideal)
+                                  2.000000    2.000000 v input external delay
+     1    0.001996    0.000000    0.000000    2.000000 v up_down (in)
+                                                         up_down (net)
+                      0.000000    0.000000    2.000000 v input3/A (sky130_fd_sc_hd__buf_1)
+     5    0.009361    0.120438    0.185427    2.185427 v input3/X (sky130_fd_sc_hd__buf_1)
+                                                         net3 (net)
+                      0.120438    0.000000    2.185427 v _41_/A1 (sky130_fd_sc_hd__o31ai_1)
+     2    0.004901    0.430848    0.505213    2.690640 ^ _41_/Y (sky130_fd_sc_hd__o31ai_1)
+                                                         _19_ (net)
+                      0.430848    0.000000    2.690640 ^ _44_/C (sky130_fd_sc_hd__nand4_1)
+     1    0.002292    0.171054    0.305914    2.996554 v _44_/Y (sky130_fd_sc_hd__nand4_1)
+                                                         _22_ (net)
+                      0.171054    0.000000    2.996554 v _45_/A3 (sky130_fd_sc_hd__a31o_1)
+     1    0.001620    0.057017    0.413738    3.410292 v _45_/X (sky130_fd_sc_hd__a31o_1)
+                                                         _03_ (net)
+                      0.057017    0.000000    3.410292 v _49_/D (sky130_fd_sc_hd__dfxtp_1)
+                                              3.410292   data arrival time
+
+                      0.000000   10.000000   10.000000   clock clk (rise edge)
+                                  0.000000   10.000000   clock network delay (ideal)
+                                  0.000000   10.000000   clock reconvergence pessimism
+                                             10.000000 ^ _49_/CLK (sky130_fd_sc_hd__dfxtp_1)
+                                 -0.282433    9.717567   library setup time
+                                              9.717567   data required time
+---------------------------------------------------------------------------------------------
+                                              9.717567   data required time
+                                             -3.410292   data arrival time
+---------------------------------------------------------------------------------------------
+                                              6.307276   slack (MET)
+
+
+
+
+===========================================================================
+report_checks --slack_max -0.01
+============================================================================
+======================= nom_ss_100C_1v60 Corner ===================================
+
+No paths found.
+
+
+===========================================================================
+ report_check_types -max_slew -max_cap -max_fanout -violators
+============================================================================
+======================= nom_ss_100C_1v60 Corner ===================================
+
+
+
+===========================================================================
+report_parasitic_annotation -report_unannotated
+============================================================================
+Found 41 unannotated drivers.
+ clk
+ enable
+ reset
+ up_down
+ _23_/Y
+ _24_/Y
+ _25_/Y
+ _26_/Y
+ _27_/Y
+ _28_/Y
+ _29_/X
+ _30_/X
+ _31_/Y
+ _32_/Y
+ _33_/X
+ _34_/X
+ _35_/X
+ _36_/Y
+ _37_/Y
+ _38_/Y
+ _39_/Y
+ _40_/Y
+ _41_/Y
+ _42_/Y
+ _43_/X
+ _44_/Y
+ _45_/X
+ _46_/Q
+ _47_/Q
+ _48_/Q
+ _49_/Q
+ clkbuf_0_clk/X
+ clkbuf_1_0__f_clk/X
+ clkbuf_1_1__f_clk/X
+ input1/X
+ input2/X
+ input3/X
+ output4/X
+ output5/X
+ output6/X
+ output7/X
+Found 0 partially unannotated drivers.
+
+===========================================================================
+max slew violation count 0
+max fanout violation count 0
+max cap violation count 0
+============================================================================
+
+===========================================================================
+check_setup -verbose -unconstrained_endpoints -multiple_clock -no_clock -no_input_delay -loops -generated_clocks
+===========================================================================

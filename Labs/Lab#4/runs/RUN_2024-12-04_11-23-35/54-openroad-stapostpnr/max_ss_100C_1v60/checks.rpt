@@ -1,0 +1,86 @@
+
+===========================================================================
+report_checks -unconstrained
+===========================================================================
+======================= max_ss_100C_1v60 Corner ===================================
+
+Startpoint: up_down (input port clocked by clk)
+Endpoint: _49_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: max
+
+Fanout         Cap        Slew       Delay        Time   Description
+---------------------------------------------------------------------------------------------
+                                  0.000000    0.000000   clock clk (rise edge)
+                                  0.000000    0.000000   clock network delay (propagated)
+                                  2.000000    2.000000 v input external delay
+     1    0.002751    0.000000    0.000000    2.000000 v up_down (in)
+                                                         up_down (net)
+                      0.000157    0.000078    2.000078 v input3/A (sky130_fd_sc_hd__buf_1)
+     5    0.014434    0.171669    0.225911    2.225989 v input3/X (sky130_fd_sc_hd__buf_1)
+                                                         net3 (net)
+                      0.171670    0.000810    2.226799 v _41_/A1 (sky130_fd_sc_hd__o31ai_1)
+     2    0.008531    0.588006    0.661252    2.888052 ^ _41_/Y (sky130_fd_sc_hd__o31ai_1)
+                                                         _19_ (net)
+                      0.588006    0.000489    2.888540 ^ _44_/C (sky130_fd_sc_hd__nand4_1)
+     1    0.003640    0.214229    0.384129    3.272669 v _44_/Y (sky130_fd_sc_hd__nand4_1)
+                                                         _22_ (net)
+                      0.214229    0.000242    3.272911 v _45_/A3 (sky130_fd_sc_hd__a31o_1)
+     1    0.001973    0.058919    0.437367    3.710279 v _45_/X (sky130_fd_sc_hd__a31o_1)
+                                                         _03_ (net)
+                      0.058919    0.000088    3.710366 v _49_/D (sky130_fd_sc_hd__dfxtp_1)
+                                              3.710366   data arrival time
+
+                                 10.000000   10.000000   clock clk (rise edge)
+                                  0.000000   10.000000   clock source latency
+     1    0.009339    0.000000    0.000000   10.000000 ^ clk (in)
+                                                         clk (net)
+                      0.000581    0.000290   10.000291 ^ clkbuf_0_clk/A (sky130_fd_sc_hd__clkbuf_16)
+     2    0.018721    0.065707    0.189462   10.189753 ^ clkbuf_0_clk/X (sky130_fd_sc_hd__clkbuf_16)
+                                                         clknet_0_clk (net)
+                      0.065720    0.000950   10.190702 ^ clkbuf_1_0__f_clk/A (sky130_fd_sc_hd__clkbuf_16)
+     2    0.006276    0.049547    0.198575   10.389278 ^ clkbuf_1_0__f_clk/X (sky130_fd_sc_hd__clkbuf_16)
+                                                         clknet_1_0__leaf_clk (net)
+                      0.049548    0.000300   10.389579 ^ _49_/CLK (sky130_fd_sc_hd__dfxtp_1)
+                                  0.000000   10.389579   clock reconvergence pessimism
+                                 -0.269881   10.119698   library setup time
+                                             10.119698   data required time
+---------------------------------------------------------------------------------------------
+                                             10.119698   data required time
+                                             -3.710366   data arrival time
+---------------------------------------------------------------------------------------------
+                                              6.409331   slack (MET)
+
+
+
+
+===========================================================================
+report_checks --slack_max -0.01
+============================================================================
+======================= max_ss_100C_1v60 Corner ===================================
+
+No paths found.
+
+
+===========================================================================
+ report_check_types -max_slew -max_cap -max_fanout -violators
+============================================================================
+======================= max_ss_100C_1v60 Corner ===================================
+
+
+
+===========================================================================
+report_parasitic_annotation -report_unannotated
+============================================================================
+Found 0 unannotated drivers.
+Found 0 partially unannotated drivers.
+
+===========================================================================
+max slew violation count 0
+max fanout violation count 0
+max cap violation count 0
+============================================================================
+
+===========================================================================
+check_setup -verbose -unconstrained_endpoints -multiple_clock -no_clock -no_input_delay -loops -generated_clocks
+===========================================================================
